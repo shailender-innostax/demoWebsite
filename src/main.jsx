@@ -201,6 +201,9 @@ function Sidebar({ open, setOpen, navigate, path }) {
         <button className="sidebar-direct" type="button" onClick={() => { navigate("/", "Sidebar simple button"); setOpen(false); }}>
           Overview <span>→</span>
         </button>
+        <button className="sidebar-direct" type="button" onClick={() => { navigate("/sidebar-only", "Sidebar-only button"); setOpen(false); }}>
+          Sidebar only <span>→</span>
+        </button>
         {sections.map((section) => (
           <div className="sidebar-section" key={section.key}>
             <button
@@ -291,6 +294,7 @@ function App() {
     ...navGroups.resources,
     ...navGroups.solutions.flatMap((item) => item.children || [item]),
     { label: "Pricing", path: "/prices" },
+    { label: "Sidebar only", path: "/sidebar-only" },
   ];
   const title = destinationItems.find((item) => item.path === path)?.label || "Navigation overview";
 
