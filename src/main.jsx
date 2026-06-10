@@ -43,13 +43,22 @@ const hiddenCases = [
   { id: "collapsed-parent", label: "Collapsed menu parent", code: "hidden parent subtree", kind: "collapsed" },
 ];
 
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+const routeFromLocation = () => {
+  const route = window.location.pathname.startsWith(basePath)
+    ? window.location.pathname.slice(basePath.length)
+    : window.location.pathname;
+
+  return route || "/";
+};
+
 function useNavigation() {
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(routeFromLocation);
   const [source, setSource] = useState("Direct page load");
 
   useEffect(() => {
     const onPopState = () => {
-      setPath(window.location.pathname);
+      setPath(routeFromLocation());
       setSource("Browser history");
     };
     window.addEventListener("popstate", onPopState);
@@ -57,7 +66,7 @@ function useNavigation() {
   }, []);
 
   const navigate = (nextPath, nextSource = "Navigation item") => {
-    window.history.pushState({}, "", nextPath);
+    window.history.pushState({}, "", `${basePath}${nextPath}`);
     setPath(nextPath);
     setSource(nextSource);
     window.scrollTo({ top: 0, behavior: "smooth" });
