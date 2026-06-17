@@ -580,7 +580,7 @@ function App() {
                   interactive elements.
                 </p>
                 <div className="hero-actions">
-                  <button
+                  {/* <button
                     className="primary-button"
                     type="button"
                     onClick={() =>
@@ -590,7 +590,7 @@ function App() {
                     }
                   >
                     Explore hidden cases <span>↓</span>
-                  </button>
+                  </button> */}
                   <button
                     className="secondary-button"
                     type="button"
@@ -652,7 +652,7 @@ function App() {
               </article>
             </section>
 
-            <HiddenAttributesLab />
+            {/* <HiddenAttributesLab /> */}
           </>
         ) : (
           <section className="destination-page">
