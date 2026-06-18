@@ -318,7 +318,7 @@ function NestedDropdown({ navigate }) {
 }
 
 function Sidebar({ open, setOpen, navigate, path }) {
-  const [expanded, setExpanded] = useState("products");
+  const [expanded, setExpanded] = useState("");
   const sections = [
     { key: "products", title: "Products", items: navGroups.products },
     { key: "resources", title: "Resources", items: navGroups.resources },
