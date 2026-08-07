@@ -256,7 +256,7 @@ function BuggyMarketingHome({ navigate, setSidebarOpen }) {
         <div className="hero-copy">
           <span className="eyebrow"><i /> premium markting automation platform</span>
           <h1>
-            Convert vistors into
+            Convert visitors into
             <br />
             <em>revenue fasterr.</em>
           </h1>
