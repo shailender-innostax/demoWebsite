@@ -1,6 +1,6 @@
-# QA Navigation Lab
+# Buggy Marketing Test Site
 
-A React test site for reproducing navigation and hidden-interactive-element findings in QA scanners.
+A React marketing website with intentional defects for validating a QA scanner defects lane.
 
 ## Run locally
 
@@ -15,15 +15,20 @@ Create a production build with:
 npm run build
 ```
 
-## Navigation scenarios
+## Intentional defect scenarios
 
-- **Products:** click-triggered dropdown
-- **Resources:** hover and keyboard-focus-triggered dropdown
-- **Solutions:** click-triggered dropdown with nested submenus
-- **Pricing:** simple redirect button
-- **Menu:** off-canvas sidebar with collapsible groups
+- Typo and grammar issues: `markting`, `vistors`, `fasterr`, `Contat us`
+- Placeholder text: `Lorem ipsum`, `TBD`, `[object Object]`, `undefined`, `null`
+- Broken image: missing hero dashboard asset
+- Broken primary navigation and CTA links: `/missing-offer.html`, `/privacy.html`
+- Public protected-looking routes: `/admin/`, `/dashboard/`
+- Dead CTA buttons that do not change route or UI state
+- Empty checkout success: total is `$0`, but checkout still confirms order
+- Lead form action points to a missing server error page
+- Horizontal overflow: a `145vw` banner on mobile
+- Hidden interactive target variants for hidden-attribute testing
 
-Every destination updates the browser URL and the live route panel without a full page reload.
+The site is intentionally imperfect. Do not treat the defects as regressions to fix unless you are changing the test fixture itself.
 
 ## Hidden attributes scenarios
 
@@ -40,6 +45,6 @@ The hidden attributes lab renders a real button in each of these states:
 | `offscreen` | Absolutely positioned off-screen |
 | `collapsed-parent` | Hidden collapsed parent subtree |
 
-Use **Reveal test target** on an individual card or **Reveal all targets** to compare scanner output before and after the controls become visible.
+Use **Reveal test target** on an individual card to compare scanner output before and after a control becomes visible.
 
-Closed navbar menus, nested submenus, sidebar sections, and the closed sidebar also intentionally leave their interactive descendants in the DOM under hidden or off-screen parent states.
+Closed navbar menus, sidebar sections, and the closed sidebar also intentionally leave their interactive descendants in the DOM under hidden or off-screen parent states.
