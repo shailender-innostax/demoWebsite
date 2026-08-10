@@ -20,6 +20,8 @@ npm run build
 - Typo and grammar issues: `markting`, `vistors`, `fasterr`, `Contat us`
 - Placeholder text: `Lorem ipsum`, `TBD`, `[object Object]`, `undefined`, `null`
 - Broken image: missing hero dashboard asset
+- Missing favicon/logo: `/favicon-missing.ico` and missing company logo asset
+- Overlapping elements: floating promo card covers the campaign planner CTA
 - Broken primary navigation and CTA links: `/missing-offer.html`, `/privacy.html`
 - Public protected-looking routes: `/admin/`, `/dashboard/`
 - Dead CTA buttons that do not change route or UI state

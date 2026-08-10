@@ -255,6 +255,7 @@ function BuggyMarketingHome({ navigate, setSidebarOpen }) {
       <section className="hero marketing-hero">
         <div className="hero-copy">
           <span className="eyebrow"><i /> premium markting automation platform</span>
+          <img className="company-logo-broken" src={fullPath("/assets/missing-company-logo.svg")} alt="AcmeGrowth logo" />
           <h1>
             Convert vistors into
             <br />
@@ -289,6 +290,19 @@ function BuggyMarketingHome({ navigate, setSidebarOpen }) {
         <article><span>02</span><strong>Placeholder</strong><p>Pricing block says null until CMS is ready.</p></article>
         <article><span>03</span><strong>Broken CTA</strong><p>Start free audit opens a missing page.</p></article>
         <article><span>04</span><strong>Overflow</strong><p>Mobile has an intentionally wide banner.</p></article>
+      </section>
+
+      <section className="overlap-lab" aria-label="Overlapping element defect">
+        <article className="overlap-base-card">
+          <span className="eyebrow">Layout defect target</span>
+          <h2>Campaign planner</h2>
+          <p>This CTA is intentionally covered by the promo card below, creating an overlapping element defect.</p>
+          <button className="primary-button" type="button">Plan campaign</button>
+        </article>
+        <article className="overlap-floating-card">
+          <strong>Limited time offer</strong>
+          <p>This card overlaps the Campaign planner CTA.</p>
+        </article>
       </section>
 
       <section className="content-grid">
